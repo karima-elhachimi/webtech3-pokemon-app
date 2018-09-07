@@ -9,8 +9,7 @@
     "eofline": true,
     "forin": true,
     "indent": [
-      true,
-      "spaces"
+
     ],
     "label-position": true,
     "label-undefined": true,

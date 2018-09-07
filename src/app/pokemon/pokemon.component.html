@@ -1,0 +1,16 @@
+<p>
+  pokemon works!
+</p>
+
+<h2>Find your pokemon!</h2>
+
+<label>select the first date</label>
+<input [(ngModel)]="date1" type="date">
+
+<label>select the second date</label>
+<input [(ngModel)]="date2 "type="date">
+<button (click)="findPokemon()">Show Pokemon</button>
+
+<div ng-if="found">
+  <p>the pokemon you searched:</p>
+</div>
