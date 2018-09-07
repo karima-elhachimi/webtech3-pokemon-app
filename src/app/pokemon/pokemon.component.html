@@ -11,6 +11,7 @@
 <input [(ngModel)]="date2 "type="date">
 <button (click)="findPokemon()">Show Pokemon</button>
 
-<div ng-if="found">
+<div  *ngIf="found" >
   <p>the pokemon you searched:</p>
 </div>
+<p class="tiny">please let me pass... </p>

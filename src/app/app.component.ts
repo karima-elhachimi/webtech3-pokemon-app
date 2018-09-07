@@ -3,7 +3,11 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'my-app',
-  template: `<h1>Hey {{name}}</h1><br/><app-pokemon></app-pokemon> <p class="tiny">please let me pass... </p>`,
-  styles: [ '.tiny { font-size: 8px;}']
+  template: `
+    <a routerLink="/all-pokemons">See all pokemon</a>
+    <a routerLink="/">main page</a>
+    <h1>Hey {{name}}</h1><br/><router-outlet></router-outlet>
+  `,
+  styles: [ '']
 })
 export class AppComponent  { name = 'You'; }

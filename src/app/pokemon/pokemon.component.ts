@@ -23,11 +23,13 @@ export class PokemonComponent implements OnInit {
   findPokemon() {
     this.date1 = new Date(this.date1);
     this.date2 = new Date(this.date2);
-    let dateString1: string = this.date1.getFullYear() + '/' + (this.date1.getMonth() + 1) + '/' + this.date1.getDate();
-    let dateString2: string = this.date2.getFullYear() + '/' + (this.date2.getMonth() + 1) + '/' + this.date2.getDate();
-    console.log(5, 'dates: ' + dateString1 );
 
-    this.pokemonService.findPokemons(dateString1, dateString2);
+    console.log(5, 'dates: ' + this.date1 );
+
+    this.foundPokemon = this.pokemonService.findPokemons(this.date1, this.date2);
+    if (this.foundPokemon.length > 0) {
+      this.found = true;
+    }
 
   }
 

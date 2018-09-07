@@ -30,21 +30,22 @@ export class PokemonServiceService {
   }
 
 
-  findPokemons(date: string, date2: string): Pokemon[] {
+  findPokemons(date: Date, date2: Date): Pokemon[] {
 
-    let gevondenPokemons: Pokemon[];
+    let gevondenPokemons: Pokemon[] = [];
 
     for (let i = 0; i < this.pokemons.length; i++) {
-      if (this.pokemons[i].owned > date && this.pokemons[i].owned < date2) {
+      console.log(6, 'pokemon owned: ' + new Date(this.pokemons[i].owned));
+      if (new Date(this.pokemons[i].owned).getTime() <= date.getTime() && new Date(this.pokemons[i].owned).getTime() < date2.getTime()) {
+
         console.log(5, 'gevonden pokemon: '+ this.pokemons[i]);
         gevondenPokemons.push(this.pokemons[i]);
-      }
-      else {
+      } else {
         console.log(5, 'geen pokemon gevonden');
       }
     }
 
-    //localStorage.setItem('', JSON.stringify(gevondenPokemons));
+    localStorage.setItem('', JSON.stringify(gevondenPokemons));
 
     return gevondenPokemons;
 
