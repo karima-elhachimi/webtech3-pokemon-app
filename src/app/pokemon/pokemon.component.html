@@ -13,5 +13,13 @@
 
 <div  *ngIf="found" >
   <p>the pokemon you searched:</p>
+
+  <u >
+    <li *ngFor="let pokemon of foundPokemon">
+      <span>{{ pokemon.name }}</span>
+
+    </li>
+  </u>
+
 </div>
 <p class="tiny">please let me pass... </p>
